@@ -41,7 +41,9 @@ import { MdDeleteOutline } from "react-icons/md";
 import { IoIosArrowBack } from "react-icons/io";
 import { GiProgression } from "react-icons/gi";
 import { AiOutlineSafetyCertificate } from "react-icons/ai";
-
+import { IoMdFitness } from "react-icons/io";
+import { FaSignsPost } from "react-icons/fa6";
+import { GiPostStamp } from "react-icons/gi";
 
 export const Icons = {
        call:IoCall,
@@ -92,5 +94,9 @@ export const Icons = {
        progress:GiProgression,
        safety:AiOutlineSafetyCertificate,
        forward:IoIosArrowForward,
-       back:IoIosArrowBack
+       back:IoIosArrowBack,
+       trainer_icon: IoMdFitness,
+       posts_icon: FaSignsPost,
+       post_sidebaricon: GiPostStamp
+
 }

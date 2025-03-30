@@ -25,7 +25,7 @@ const SideBar = () => {
     },
     {
       name: "Profile",
-      icon: <Icons.settings />,
+      icon: <Icons.User />,
       subMenu: [
         { name: "Users", link: "creators" },
         { name: "Trainers", link: "brands" },
@@ -34,12 +34,12 @@ const SideBar = () => {
     {
       name: "Blog management",
       link: "/dashboard",
-      icon: <Icons.home />,
+      icon: <Icons.post_sidebaricon />,
       subMenu: [],
     },
     {
       name: "Call Management",
-      icon: <Icons.settings />,
+      icon: <Icons.call />,
       subMenu: [
         { name: "Completed Calls", link: "creators" },
         { name: "Rejected Calls", link: "brands" }, // may remove later 

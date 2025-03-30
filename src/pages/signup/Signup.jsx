@@ -4,14 +4,17 @@ import axios from "axios";
 import { API_URL } from "../../config";
 
 const Signup = () => {
-  console.log("API_URL======",API_URL);
+  console.log("API_URL======", API_URL);
+
   const [formData, setFormData] = useState({
-    firstName: "",
+    name: "",
     email: "",
     password: "",
     confirmPassword: "",
   });
+
   const [error, setError] = useState("");
+  const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
 
   const handleChange = (e) => {
@@ -20,43 +23,49 @@ const Signup = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    setError("");
 
     if (formData.password !== formData.confirmPassword) {
       setError("Passwords do not match");
       return;
     }
 
+    setLoading(true);
     try {
-      const response = await axios.post(`${API_URL}/admin/signup`, {
-        name: formData.firstName,
+      const response = await axios.post(`${API_URL}/admin/register`, {
+        name: formData.name,
         email: formData.email,
         password: formData.password,
       });
 
       if (response.status === 201) {
+        alert("Signup successful! Redirecting to login.");
         navigate("/login");
       }
     } catch (error) {
       setError(error.response?.data?.message || "Signup failed. Try again.");
+    } finally {
+      setLoading(false);
     }
   };
 
   return (
     <div className="signup-main-img">
       <div className="signup-glassmorphics-container">
-        <h2>Signup</h2>
+        <h2>Admin Signup</h2>
         {error && <p className="error-message">{error}</p>}
+        
         <form className="signup-form" onSubmit={handleSubmit}>
           <div>
-            <label htmlFor="firstName" className="block text-sm text-white mb-2">
+            <label htmlFor="name" className="block text-sm text-white mb-2">
               Name
             </label>
             <input
               type="text"
-              id="firstName"
+              id="name"
               placeholder="Enter your name"
               className="signup-input"
-              value={formData.firstName}
+              value={formData.name}
               onChange={handleChange}
               required
             />
@@ -104,9 +113,12 @@ const Signup = () => {
           </div>
 
           <div className="signup-submit">
-            <button type="submit">Signup</button>
+            <button type="submit" disabled={loading}>
+              {loading ? "Signing up..." : "Signup"}
+            </button>
           </div>
         </form>
+        
         <p className="copy-right">Tag Project</p>
       </div>
     </div>

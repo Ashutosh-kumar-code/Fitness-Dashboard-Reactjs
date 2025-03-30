@@ -13,9 +13,9 @@ const Dashboard = () => {
       <div className=' flex flex-wrap justify-between'>
         {/* <BarChart /> */}
         {/* <DoughnutChart /> */}
-        <div className=' w-full mt-6'>
+        {/* <div className=' w-full mt-6'>
           <DashboardProjectList />
-        </div>
+        </div> */}
      
        
       </div>

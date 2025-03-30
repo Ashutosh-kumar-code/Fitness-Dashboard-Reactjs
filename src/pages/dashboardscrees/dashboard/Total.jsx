@@ -22,7 +22,7 @@ const Total = () => {
           <span className="total-value-text">Total Trainer</span>
         </span>
         <span className="total-icon">
-          <Icons.Chart size={30} />
+          <Icons.trainer_icon size={30} />
         </span>
       </div>
 
@@ -33,12 +33,12 @@ const Total = () => {
           <span className="total-value-text">Total Posts</span>
         </span>
         <span className="total-icon">
-          <Icons.contract size={30} />
+          <Icons.posts_icon size={30} />
         </span>
       </div>
 
       {/* Fourth box */}
-      <div className="box-container-total">
+      {/* <div className="box-container-total">
         <span>
           <span className="total-value">4400</span> <br />
           <span className="total-value-text">Total Sales</span>
@@ -46,7 +46,7 @@ const Total = () => {
         <span className="total-icon">
           <Icons.totalSale size={30} />
         </span>
-      </div>
+      </div> */}
 
       {/* Fifth box */}
       {/* <div className="box-container-total">
