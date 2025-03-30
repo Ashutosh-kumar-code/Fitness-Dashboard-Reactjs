@@ -19,7 +19,7 @@ const Total = () => {
       <div className="box-container-total">
         <span>
           <span className="total-value">1250</span> <br />
-          <span className="total-value-text">Total Project</span>
+          <span className="total-value-text">Total Trainer</span>
         </span>
         <span className="total-icon">
           <Icons.Chart size={30} />
@@ -30,7 +30,7 @@ const Total = () => {
       <div className="box-container-total">
         <span>
           <span className="total-value">5420</span> <br />
-          <span className="total-value-text">Total Contract</span>
+          <span className="total-value-text">Total Posts</span>
         </span>
         <span className="total-icon">
           <Icons.contract size={30} />
@@ -49,7 +49,7 @@ const Total = () => {
       </div>
 
       {/* Fifth box */}
-      <div className="box-container-total">
+      {/* <div className="box-container-total">
         <span>
           <span className="total-value">1200</span> <br />
           <span className="total-value-text">Total Company</span>
@@ -57,7 +57,7 @@ const Total = () => {
         <span className="total-icon">
           <Icons.totalcompany size={30} />
         </span>
-      </div>
+      </div> */}
     </div>
   );
 };

@@ -31,6 +31,20 @@ const SideBar = () => {
         { name: "Trainers", link: "brands" },
       ],
     },
+    {
+      name: "Blog management",
+      link: "/dashboard",
+      icon: <Icons.home />,
+      subMenu: [],
+    },
+    {
+      name: "Call Management",
+      icon: <Icons.settings />,
+      subMenu: [
+        { name: "Completed Calls", link: "creators" },
+        { name: "Rejected Calls", link: "brands" }, // may remove later 
+      ],
+    },
    
    
 

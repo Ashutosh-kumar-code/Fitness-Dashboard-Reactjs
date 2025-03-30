@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Icons } from "../../../icons";
 import MobileResponsiveSidebar from "../mobileviwe/MobileResposiveSideBar";
+import admin_pic from "../../../assets/admin.png"
 
 const Head = ({ userName = "Username" }) => {
   const [mobileSideBar, SetMonileSidebar] = useState(false)
@@ -41,7 +42,7 @@ const Head = ({ userName = "Username" }) => {
         {/* User Profile */}
         <div className="head-pro">
           <img
-            src="https://via.placeholder.com/150" // Replace with user's profile image URL
+            src={admin_pic} // Replace with user's profile image URL
             alt="User Profile"
             className="head-pro-img"
           />
