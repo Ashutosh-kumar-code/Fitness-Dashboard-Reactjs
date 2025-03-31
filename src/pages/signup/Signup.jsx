@@ -119,7 +119,7 @@ const Signup = () => {
           </div>
         </form>
         
-        <p className="copy-right">Tag Project</p>
+        <p className="copy-right">Fitness Project</p>
       </div>
     </div>
   );

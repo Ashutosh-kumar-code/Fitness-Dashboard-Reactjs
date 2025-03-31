@@ -1,9 +1,10 @@
 import  { useEffect, useState } from "react";
 import { Icons } from "../../../icons";
 import { assets } from "../../../assets/assets";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const SideBar = () => {
+  const navigate = useNavigate();
   const [openMenu, setOpenMenu] = useState(null); // Track parent menus
   const [openSubMenu, setOpenSubMenu] = useState({}); // Track nested submenus
   let [activeTab, setActiveTab] = useState(
@@ -27,8 +28,9 @@ const SideBar = () => {
       name: "Profile",
       icon: <Icons.User />,
       subMenu: [
-        { name: "Users", link: "creators" },
-        { name: "Trainers", link: "brands" },
+        { name: "Users", link: "users" },
+        { name: "Unverified Trainers", link: "unverified-trainer" },
+        { name: "Verified Trainers", link: "verified-trainer" },
       ],
     },
     {
@@ -96,6 +98,14 @@ const SideBar = () => {
     ));
   };
 
+  const handleLogout = () => {
+    localStorage.removeItem('fitness_token');
+    localStorage.removeItem('fitness_userId');
+    localStorage.removeItem('fitness_userName');
+    navigate('/login'); // Redirect to login page
+};
+
+
   return (
     <div className="sidebar-main-container scrollbar-hide">
       {/* Logo */}
@@ -138,7 +148,7 @@ const SideBar = () => {
         ))}
       </nav>
       {/* Footer */}
-      <div className="sidebar-logout">
+      <div className="sidebar-logout" onClick={()=> handleLogout()} >
         <span>
           <Icons.logout size={20} className="side-logout-icon" />
         </span>

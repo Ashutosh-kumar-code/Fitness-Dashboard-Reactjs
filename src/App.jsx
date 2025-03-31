@@ -7,6 +7,8 @@ import { Route, Routes, useLocation } from 'react-router-dom'
 import MainLayout from './components/dashboard/mainlayout/MainLayout'
 import Dashboard from './pages/dashboardscrees/dashboard/Dashboard'
 import UserList from './pages/dashboardscrees/projectinitiation/user/UserList'
+import VerifiedTrainers from './pages/dashboardscrees/projectinitiation/user/VerifiedTrainers'
+import UnverifiedTrainers from './pages/dashboardscrees/projectinitiation/user/UnverifiedTrainers'
  
 
 function App() {
@@ -24,8 +26,9 @@ function App() {
           <Route path='/signup' element={<Signup />} />
           <Route path='/dashboard' element={<MainLayout />} >
             <Route index element={<Dashboard />} />
-            <Route path='creators' element={<UserList />} />
-            <Route path='brands' element={<UserList />} />
+            <Route path='users' element={<UserList />} />
+            <Route path='unverified-trainer' element={<UnverifiedTrainers />} />
+            <Route path='verified-trainer' element={<VerifiedTrainers />} />
            
           
         

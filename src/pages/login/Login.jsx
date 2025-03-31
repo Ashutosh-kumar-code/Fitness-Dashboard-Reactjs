@@ -21,7 +21,9 @@ const Login = () => {
     try {
       const response = await axios.post(`${API_URL}/admin/login`, { email, password });
       if (response.status === 200) {
-        localStorage.setItem('tag_token', response.data.token);
+        localStorage.setItem('fitness_token', response.data.token);
+        localStorage.setItem('fitness_userId', response.data.admin._id);
+        localStorage.setItem('fitness_userName', response.data.admin.name);
         navigate('/dashboard');
       }
     } catch (error) {

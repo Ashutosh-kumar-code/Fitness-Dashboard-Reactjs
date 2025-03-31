@@ -1,9 +1,9 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Icons } from "../../../icons";
 import MobileResponsiveSidebar from "../mobileviwe/MobileResposiveSideBar";
 import admin_pic from "../../../assets/admin.png"
 
-const Head = ({ userName = "Username" }) => {
+const Head = () => {
   const [mobileSideBar, SetMonileSidebar] = useState(false)
   const handleMobSideBarPop = () =>{
     SetMonileSidebar(!mobileSideBar)
@@ -12,6 +12,17 @@ const Head = ({ userName = "Username" }) => {
   const handleClose = () =>{
     SetMonileSidebar(false)
   }
+
+  const [userName, setUserName] = useState("");
+
+  // Fetch username from localStorage when the component mounts
+  useEffect(() => {
+    const storedUserName = localStorage.getItem("fitness_userName");
+    if (storedUserName) {
+      setUserName(storedUserName);
+    }
+  }, []);
+
   return (
     <div className="head-main-container ">
      
@@ -21,7 +32,7 @@ const Head = ({ userName = "Username" }) => {
            <Icons.align size={20} className="mt-1"/>
       </div>&nbsp;
       <div className="">
-        Hello! <span className=" text-[#13BAB8]">{userName}</span>
+        Hello! <span className=" text-[#13BAB8]">{userName || "Guest"}</span>
         </div>
       </div>
 
