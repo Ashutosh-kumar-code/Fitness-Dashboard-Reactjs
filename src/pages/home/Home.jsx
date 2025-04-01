@@ -7,18 +7,12 @@ const Home = () => {
       {/* Content goes here */}
       <div className="home-content">
         <h1>
-          Construction of
-          private houses
+        Transform Your Body, Elevate Your Life
         </h1>
         <p>
-          All types of work - form designing and laying the foundations to
-          finishing and commissioning. Tight deadlines, reasonable prices,
-          free shipping.
+        Personalized fitness programs, expert coaching, and tailored nutrition plans to help you achieve your health and fitness goals.
         </p>
-        <div className="home-btn-main">
-          <button>Get a quote</button>
-          <hr/>
-        </div>
+       
       </div>
     </div>
   );
